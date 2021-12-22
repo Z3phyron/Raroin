@@ -21,12 +21,16 @@ const Artist = (props) => {
 const Card = styled.div`
 padding: 10px;
 width: 200px;
-box-shadow: 0 1px 1px 1px var(--gray);
+background: var(--White);
+box-shadow: 0 1px 1px 1px var(--gray-blue);
 border-radius: 50px;
 display: grid;
 grid-template-columns: 30% auto;
 grid-gap: 10px;
 align-items: center;
+@media (max-width: 500px) {
+    width: 100%;
+}
 `;
 const UserImg = styled.div`
 width: 50px;

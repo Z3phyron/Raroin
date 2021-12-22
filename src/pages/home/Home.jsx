@@ -1,5 +1,5 @@
 import React from "react";
-// import Artists from "../blocks/Artists";
+import Artists from "../blocks/Artists";
 import styled from "styled-components";
 import Showcase from "../blocks/Showcase";
 import { Link } from "react-router-dom";
@@ -16,7 +16,7 @@ const Home = () => {
     <Cont>
       <Showcase />
       <div className="sections">
-        {/* <Artists/> */}
+        <Artists/>
         <ExploreCont>
           <div className="header">
             <h3 className="title">Explore</h3>
