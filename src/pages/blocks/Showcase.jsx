@@ -62,6 +62,7 @@ const Text = styled.div`
     color: var(--Blue-1);
     z-index: 999;
     margin-bottom: 20px;
+    line-height: 140%;
     @media (max-width: 900px) {
       font-size: 30px;
       font-weight: 700;
@@ -88,7 +89,7 @@ const Text = styled.div`
     }
 
     button {
-      padding: 10px 25px;
+      padding: 12px 30px;
       border-radius: 50px;
       border: none;
       font-size: 17px;

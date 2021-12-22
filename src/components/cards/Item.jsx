@@ -73,7 +73,7 @@ const Card = styled.div`
   }
 
   hr {
-    /* background: var(--gray); */
+    background: var(--gray-blue);
     border: 1px solid var(--gray-blue);
   }
 `;
@@ -105,6 +105,8 @@ position: relative;
 width: 100%;
 height: 250px;
 object-fit: contain;
+margin-bottom: 10px;
+
 img {
     width: 100%;
     height: 100%;
