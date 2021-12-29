@@ -107,15 +107,14 @@ const ExploreCont = styled.div`
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
-    
 
     .title {
       font-size: 40px;
       font-weight: 600;
       color: var(--Blue-1);
       @media (max-width: 900px) {
-      font-size: 24px;
-    }
+        font-size: 24px;
+      }
     }
 
     a {

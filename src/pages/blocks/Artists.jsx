@@ -10,7 +10,7 @@ export default class Artists extends Component {
       { width: 400, itemsToShow: 1 },
       { width: 600, itemsToShow: 2 },
       { width: 900, itemsToShow: 3 },
-      { width: 1000, itemsToShow: 3 },
+      { width: 1000, itemsToShow: 4 },
     ];
     return (
       <Cont>

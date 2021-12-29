@@ -8,7 +8,7 @@ const SignedOut = ({ toggle }) => {
   return (
     <Links className={toggle ? "active" : ""}>
       <LinkItem>
-        <Link to="/shop">Marketplace</Link>
+        <Link to="/marketplace">Marketplace</Link>
       </LinkItem>
       <LinkItem>
         <Link to="/contact">Collections</Link>
@@ -51,8 +51,8 @@ const Links = styled.ul`
     height: auto;
     display: none;
     width: 100%;
-    background: var(--Color-2);
-    color: var(--Color-1);
+    background: var(--White);
+    /* color: var(--); */
     transition: all 2s;
 
     &.active {
