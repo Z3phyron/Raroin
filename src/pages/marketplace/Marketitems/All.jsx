@@ -99,6 +99,15 @@ const Menu = styled.div`
   flex-wrap: wrap;
   /* justify-content: center; */
   align-items: center;
+  @media (max-width: 1270px) {
+    font-size: 13px;
+  }
+  @media (max-width: 900px) {
+    font-size: 12px;
+  }
+  @media (max-width: 530px) {
+    font-size: 10px;
+  }
 `;
 const ItemsCont = styled.div`
   display: grid;

@@ -138,7 +138,7 @@ const MarketPlace = (props) => {
               toggleState === 8 ? "content  active-content" : "content"
             }
           >
-            <h2>Collectibles</h2>
+            <h2>Collectible</h2>
           
           </div>
         </Content>
@@ -160,7 +160,19 @@ const Title = styled.div`
   font-size: 30px;
   font-weight: 700;
   color: var(--Blue-1);
+  text-align: center;
   border-bottom: 1px solid var(--gray-blue);
+  @media (max-width: 1270px) {
+    font-size: 18px;
+  }
+  @media (max-width: 900px) {
+    font-size: 15px;
+    height: 35vh;
+  }
+  @media (max-width: 530px) {
+    font-size: 13px;
+    height: 30vh;
+  }
 `;
 const Menu = styled.div`
   width: 100%;
@@ -169,6 +181,15 @@ const Menu = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  @media (max-width: 1270px) {
+    font-size: 13px;
+  }
+  @media (max-width: 900px) {
+    font-size: 12px;
+  }
+  @media (max-width: 530px) {
+    font-size: 10px;
+  }
 `;
 const Tab = styled.button`
  
