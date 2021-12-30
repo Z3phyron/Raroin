@@ -340,7 +340,7 @@ const AucDetails = styled.div`
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   margin: 20px 0;
-  color: var(--gray-blue);
+  color: var(--gray);
   font-size: 18px;
 
   .header {
