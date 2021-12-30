@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import {
+  RiEmotionLaughLine,
   RiGamepadLine,
-  //  RiBrushLine
+  RiGlobalLine,
+  RiLayout4Line,
+  RiMusic2Line,
+  RiStockLine,
+  RiBrushLine,
 } from "react-icons/ri";
 import All from "./Marketitems/categories/All";
-import { CollectionData} from "../../lib/Data";
+import { CollectionData } from "../../lib/Data";
 import Collections from "../../components/cards/Collections";
 import { Link } from "react-router-dom";
 import Games from "./Marketitems/categories/Games";
@@ -46,36 +51,42 @@ const MarketPlace = (props) => {
           className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
           onClick={() => toggleTab(3)}
         >
+          <RiBrushLine className="icon" />
           Art
         </Tab>
         <Tab
           className={toggleState === 4 ? "tabs active-tabs" : "tabs"}
           onClick={() => toggleTab(4)}
         >
+          <RiStockLine className="icon" />
           Trading Cards
         </Tab>
         <Tab
           className={toggleState === 5 ? "tabs active-tabs" : "tabs"}
           onClick={() => toggleTab(5)}
         >
+          <RiMusic2Line className="icon" />
           Music
         </Tab>
         <Tab
           className={toggleState === 6 ? "tabs active-tabs" : "tabs"}
           onClick={() => toggleTab(6)}
         >
+          <RiGlobalLine className="icon" />
           Domain Names
         </Tab>
         <Tab
           className={toggleState === 7 ? "tabs active-tabs" : "tabs"}
           onClick={() => toggleTab(7)}
         >
+          <RiEmotionLaughLine className="icon" />
           Memes
         </Tab>
         <Tab
           className={toggleState === 8 ? "tabs active-tabs" : "tabs"}
           onClick={() => toggleTab(8)}
         >
+          <RiLayout4Line className="icon" />
           Collectibles
         </Tab>
       </Menu>
@@ -90,38 +101,38 @@ const MarketPlace = (props) => {
         <div
           className={toggleState === 2 ? "content  active-content" : "content"}
         >
-          <Games/>
+          <Games />
         </div>
 
         <div
           className={toggleState === 3 ? "content  active-content" : "content"}
         >
-          <Art/>
+          <Art />
         </div>
         <div
           className={toggleState === 4 ? "content  active-content" : "content"}
         >
-          <TradingCards/>
+          <TradingCards />
         </div>
         <div
           className={toggleState === 5 ? "content  active-content" : "content"}
         >
-          <Music/>
+          <Music />
         </div>
         <div
           className={toggleState === 6 ? "content  active-content" : "content"}
         >
-          <DomainNames/>
+          <DomainNames />
         </div>
         <div
           className={toggleState === 7 ? "content  active-content" : "content"}
         >
-          <Memes/>
+          <Memes />
         </div>
         <div
           className={toggleState === 8 ? "content  active-content" : "content"}
         >
-          <Collectibles/>
+          <Collectibles />
         </div>
       </Content>
       <CollectionCont>
@@ -190,12 +201,19 @@ const Tab = styled.button`
     padding: 15px;
     margin: 5px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
     font-size: 15px;
     border: none;
     color: var(--Blue-1);
     background: none;
     position: relative;
     outline: none;
+
+    .icon {
+      margin-right: 3px;
+      font-size: 20px;
+    }
   }
   /* &.tabs:not(:last-child) {
     border-right: 1px solid rgba(0, 0, 0, 0.274);

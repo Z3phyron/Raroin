@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 import Item from "../../../../components/cards/Item";
 import { Items } from "../../../../lib/Data";
@@ -9,7 +10,9 @@ const Art = () => {
       <Title>Art</Title>
       <ItemsCont>
         {Items.map((item, index) => (
-          <Item key={index} item={item} />
+          <Link to="/itemDetails">
+            <Item key={index} item={item} />
+          </Link>
         ))}
       </ItemsCont>
     </Cont>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Item from "../../../../components/cards/Item";
 import { Items } from "../../../../lib/Data";
@@ -52,7 +53,9 @@ const All = () => {
         >
           <ItemsCont>
             {Items.map((item, index) => (
-              <Item key={index} item={item} />
+              <Link to="/itemDetails">
+                <Item key={index} item={item} />
+              </Link>
             ))}
           </ItemsCont>
         </div>
@@ -140,6 +143,7 @@ const Tab = styled.button`
   &.tabs {
     padding: 7px 15px;
     margin: 5px;
+    margin-left: 0;
     cursor: pointer;
     font-size: 15px;
     border: none;
