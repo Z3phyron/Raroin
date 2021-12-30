@@ -215,6 +215,7 @@ const StockDetail = styled.div`
 
       .icon {
         color: var(--pink);
+
       }
     }
   }
@@ -227,6 +228,7 @@ const StockDetail = styled.div`
     justify-content: center;
     align-items: center;
     outline: none;
+    font-size: 20px;
     border: none;
     background: var(--White);
     color: var(--Blue-1);
