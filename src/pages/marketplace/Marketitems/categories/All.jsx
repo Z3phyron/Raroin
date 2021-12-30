@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Item from "../../../components/cards/Item";
-import { Items } from "../../../lib/Data";
+import Item from "../../../../components/cards/Item";
+import { Items } from "../../../../lib/Data";
 
 const All = () => {
   const [toggleState, setToggleState] = useState(1);
@@ -117,12 +117,12 @@ const ItemsCont = styled.div`
   /* text-align: center; */
   /* justify-content: center; */
 
-  hr {
+  /* hr {
     background: var(--gray-blue);
     border: 1px solid var(--gray-blue);
     width: 80%;
     margin: auto;
-  }
+  } */
 
   @media (max-width: 1270px) {
     grid-template-columns: repeat(3, 1fr);

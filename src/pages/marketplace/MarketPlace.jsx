@@ -3,15 +3,21 @@ import styled from "styled-components";
 import {
   RiGamepadLine,
   //  RiBrushLine
-  } from "react-icons/ri"
-import All from "./Marketitems/All"
-
-
+} from "react-icons/ri";
+import All from "./Marketitems/categories/All";
+import { CollectionData} from "../../lib/Data";
+import Collections from "../../components/cards/Collections";
+import { Link } from "react-router-dom";
+import Games from "./Marketitems/categories/Games";
+import Art from "./Marketitems/categories/Art";
+import TradingCards from "./Marketitems/categories/TradingCards";
+import Music from "./Marketitems/categories/Music";
+import DomainNames from "./Marketitems/categories/DomainNames";
+import Memes from "./Marketitems/categories/Memes";
+import Collectibles from "./Marketitems/categories/Collectibles";
 
 const MarketPlace = (props) => {
   const [toggleState, setToggleState] = useState(1);
-
-
 
   const toggleTab = (index) => {
     setToggleState(index);
@@ -27,7 +33,7 @@ const MarketPlace = (props) => {
           className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
           onClick={() => toggleTab(1)}
         >
-        All
+          All
         </Tab>
         <Tab
           className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
@@ -64,7 +70,7 @@ const MarketPlace = (props) => {
           className={toggleState === 7 ? "tabs active-tabs" : "tabs"}
           onClick={() => toggleTab(7)}
         >
-        Memes
+          Memes
         </Tab>
         <Tab
           className={toggleState === 8 ? "tabs active-tabs" : "tabs"}
@@ -73,76 +79,64 @@ const MarketPlace = (props) => {
           Collectibles
         </Tab>
       </Menu>
-     
-        <Content className="content-tabs">
-          <div
-            className={
-              toggleState === 1 ? "content  active-content" : "content"
-            }
-          >
-            <All/>
-            
-          </div>
 
-          <div
-            className={
-              toggleState === 2 ? "content  active-content" : "content"
-            }
-          >
-            <h2>Games</h2>
-            
-          </div>
+      <Content className="content-tabs">
+        <div
+          className={toggleState === 1 ? "content  active-content" : "content"}
+        >
+          <All />
+        </div>
 
-          <div
-            className={
-              toggleState === 3 ? "content  active-content" : "content"
-            }
-          >
-            <h2>Art</h2>
-          
-          </div>
-          <div
-            className={
-              toggleState === 4 ? "content  active-content" : "content"
-            }
-          >
-            <h2>Trading Cards</h2>
-          
-          </div>
-          <div
-            className={
-              toggleState === 5 ? "content  active-content" : "content"
-            }
-          >
-            <h2>Music</h2>
-          
-          </div>
-          <div
-            className={
-              toggleState === 6 ? "content  active-content" : "content"
-            }
-          >
-            <h2>Domain Names</h2>
-          
-          </div>
-          <div
-            className={
-              toggleState === 7 ? "content  active-content" : "content"
-            }
-          >
-            <h2>Memes</h2>
-          
-          </div>
-          <div
-            className={
-              toggleState === 8 ? "content  active-content" : "content"
-            }
-          >
-            <h2>Collectible</h2>
-          
-          </div>
-        </Content>
-     
+        <div
+          className={toggleState === 2 ? "content  active-content" : "content"}
+        >
+          <Games/>
+        </div>
+
+        <div
+          className={toggleState === 3 ? "content  active-content" : "content"}
+        >
+          <Art/>
+        </div>
+        <div
+          className={toggleState === 4 ? "content  active-content" : "content"}
+        >
+          <TradingCards/>
+        </div>
+        <div
+          className={toggleState === 5 ? "content  active-content" : "content"}
+        >
+          <Music/>
+        </div>
+        <div
+          className={toggleState === 6 ? "content  active-content" : "content"}
+        >
+          <DomainNames/>
+        </div>
+        <div
+          className={toggleState === 7 ? "content  active-content" : "content"}
+        >
+          <Memes/>
+        </div>
+        <div
+          className={toggleState === 8 ? "content  active-content" : "content"}
+        >
+          <Collectibles/>
+        </div>
+      </Content>
+      <CollectionCont>
+        <div className="header">
+          <h3 className="title">Collections</h3>
+          <Link to="/" className="cta">
+            view all
+          </Link>
+        </div>
+        <div className="collections">
+          {CollectionData.map((collection, index) => (
+            <Collections key={index} collection={collection} />
+          ))}
+        </div>
+      </CollectionCont>
     </Cont>
   );
 };
@@ -192,16 +186,14 @@ const Menu = styled.div`
   }
 `;
 const Tab = styled.button`
- 
-
   &.tabs {
     padding: 15px;
     margin: 5px;
     cursor: pointer;
     font-size: 15px;
-  border: none;
-  color: var(--Blue-1);
-  background: none;
+    border: none;
+    color: var(--Blue-1);
+    background: none;
     position: relative;
     outline: none;
   }
@@ -228,10 +220,9 @@ const Tab = styled.button`
   } */
 `;
 const Content = styled.div`
- background: var(--gray-blue);
- 
- .content {
-   
+  background: var(--gray-blue);
+
+  .content {
     padding: 5%;
     width: 100%;
     height: 100%;
@@ -252,6 +243,52 @@ const Content = styled.div`
   }
   .active-content {
     display: block;
+  }
+`;
+
+const CollectionCont = styled.div`
+  padding: 5% 5%;
+  text-align: center;
+  background: var(--gray-blue);
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+    .title {
+      font-size: 40px;
+      font-weight: 600;
+      color: var(--Blue-1);
+      @media (max-width: 900px) {
+        font-size: 24px;
+      }
+    }
+
+    a {
+      padding: 7px 15px;
+      border-radius: 50px;
+      color: var(--White);
+      background: var(--Blue-1);
+    }
+  }
+
+  .collections {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    align-items: center;
+    @media (max-width: 1270px) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 30px;
+    }
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+    }
+    @media (max-width: 530px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 `;
 
